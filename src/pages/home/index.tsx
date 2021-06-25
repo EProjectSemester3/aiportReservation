@@ -1,5 +1,6 @@
-import React from "react"
+import React from "react";
+import { HomeComponent } from "src/components/pages/home";
 
 export default function HomePageContainer() {
-    return <>home page</>
+  return <HomeComponent />;
 }
