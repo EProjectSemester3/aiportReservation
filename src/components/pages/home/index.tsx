@@ -2,7 +2,7 @@ export interface HomeComponentProps {}
 
 export function HomeComponent(props: HomeComponentProps) {
   return (
-    <section className="homePage">
+    <section className="homePage h-100">
       <div className="container h-100">
         <div className="row h-100 align-items-center justify-content-between">
           <div className="col-xxl-4">
@@ -44,7 +44,10 @@ export function HomeComponent(props: HomeComponentProps) {
               <div className="row mb-4">
                 <div className="col">
                   <div className="form-floating mb-3">
-                    <select className="form-control" id="floatingInput" defaultValue="1">
+                    <select
+                      className="form-control"
+                      id="floatingInput"
+                      defaultValue="1">
                       <option value="1">One</option>
                       <option value="2">Two</option>
                       <option value="3">Three</option>
@@ -56,7 +59,10 @@ export function HomeComponent(props: HomeComponentProps) {
                 </div>
                 <div className="col">
                   <div className="form-floating mb-3">
-                    <select className="form-control" id="floatingInput" defaultValue="1">
+                    <select
+                      className="form-control"
+                      id="floatingInput"
+                      defaultValue="1">
                       <option value="1">One</option>
                       <option value="2">Two</option>
                       <option value="3">Three</option>
@@ -137,7 +143,10 @@ export function HomeComponent(props: HomeComponentProps) {
               <div className="row">
                 <div className="col">
                   <div className="form-floating">
-                    <select className="form-control" id="floatingInput" defaultValue="1">
+                    <select
+                      className="form-control"
+                      id="floatingInput"
+                      defaultValue="1">
                       <option value="1">One</option>
                       <option value="2">Two</option>
                       <option value="3">Three</option>

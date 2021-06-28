@@ -1,7 +1,7 @@
 import { TokenInfo } from "src/models/TokenInfo"
 import { AxiosInstance, AxiosRequestConfig } from "axios"
 import { BaseResult, LoginRequest } from "./models"
-import { UserRegister } from "src/models"
+import { User, UserRegister } from "src/models"
 
 export class APIService {
   constructor(private _axios: AxiosInstance) {
@@ -17,7 +17,7 @@ export class APIService {
   }
 
   public async login(request: LoginRequest): Promise<boolean> {
-    const resp = await this._axios.post<TokenInfo>("/api/User/login", request, {
+    const resp = await this._axios.post<TokenInfo>("/User/login", request, {
       validateStatus: (status: number) => status === 200 || status === 401,
     })
 
@@ -31,12 +31,19 @@ export class APIService {
 
   public async register(request: UserRegister): Promise<BaseResult> {
     const resp = await this._axios.post<BaseResult>(
-      "/api/User/register",
+      "/User/register",
       request,
       {
         validateStatus: (status: number) => status === 201 || status === 400,
       },
     )
+    return resp.data
+  }
+
+  public async currentUser(): Promise<User> {
+    const resp = await this._axios.get<User>("/User/me", {
+      validateStatus: (status: number) => status === 200,
+    })
     return resp.data
   }
 }

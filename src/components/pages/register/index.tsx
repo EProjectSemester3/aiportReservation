@@ -38,7 +38,7 @@ export function RegisterComponent(props: RegisterComponentProps) {
   )
 
   return (
-    <div className="register">
+    <div className="register h-100">
       <div className="container h-100">
         <div className="row justify-content-center align-items-center h-100">
           <div className="col-12 col-xxl-4">

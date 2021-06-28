@@ -1,3 +1,4 @@
+import { Action, ThunkAction } from "@reduxjs/toolkit"
 import { User } from "src/models"
 
 export interface UserState {
@@ -7,3 +8,10 @@ export interface UserState {
 export interface IAppState {
   user: UserState
 }
+
+export type AppThunk<ReturnType = void> = ThunkAction<
+  ReturnType,
+  IAppState,
+  unknown,
+  Action<string>
+>

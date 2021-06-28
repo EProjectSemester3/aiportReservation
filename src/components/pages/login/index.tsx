@@ -48,7 +48,7 @@ export function LoginComponent(props: LoginComponentProps) {
   )
 
   return (
-    <div className="login-page">
+    <div className="login-page h-100">
       <div className="container h-100">
         <div className="row justify-content-center h-100 align-items-center">
           <div className="col-4">

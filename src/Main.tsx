@@ -2,13 +2,16 @@ import { BrowserRouter } from "react-router-dom"
 import App from "./App"
 import { Provider } from "react-redux"
 import store from "./state/store"
+import Bootstrap from "./components/bootstrap"
 
 export function Main() {
   return (
-    <BrowserRouter>
-      <Provider store={store}>
-        <App />
-      </Provider>
-    </BrowserRouter>
+    <Provider store={store}>
+      <Bootstrap>
+        <BrowserRouter>
+          <App />
+        </BrowserRouter>
+      </Bootstrap>
+    </Provider>
   )
 }

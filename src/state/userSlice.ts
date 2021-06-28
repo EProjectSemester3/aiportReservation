@@ -19,7 +19,6 @@ export const userSlice = createSlice({
 })
 
 export const { userIdentify } = userSlice.actions
-export default userSlice.reducer
 
 export const selectUserState = (state: IAppState) => state.user
 
@@ -27,3 +26,17 @@ export const selectUser = createSelector(
   selectUserState,
   userState => userState.value,
 )
+
+export const isSelectUser = createSelector(selectUserState, userState => {
+  return userState.value?.roles
+})
+
+export const isAdmin = createSelector(selectUserState, userState => {
+  const roles = userState.value?.roles
+  if (roles?.includes("admin")) {
+    return true
+  }
+  return false
+})
+
+export default userSlice.reducer
