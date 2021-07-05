@@ -1,11 +1,11 @@
 export interface User {
   id: string
-  username: string
+  userName: string
   firstName: string
   lastName: string
   roles?: string[]
   email?: string
-  phone: string
+  phoneNumber: string
   dob: Date
   emailVerified?: boolean
 }

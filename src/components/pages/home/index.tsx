@@ -13,7 +13,7 @@ export function HomeComponent(props: HomeComponentProps) {
                 easy steps!
               </p>
               <p className="fs-5">
-                Discover now the best deals htmlFor you at Traveloka!
+                Discover now the best deals for you at <span className="fw-bold">Tr.vl+!</span>
               </p>
             </div>
           </div>
