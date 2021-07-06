@@ -16,7 +16,7 @@ export default function Bootstrap(props: AppInitProps) {
     let mounted = true
 
     const getUser = async () => {
-      const token = localStorage.getItem("token")
+      const token = sessionStorage.getItem("token")
       if (token) {
         const user = await apiService.currentUser()
         dispatch(userIdentify(user))

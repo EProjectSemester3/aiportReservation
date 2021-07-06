@@ -3,4 +3,10 @@ export interface Airport {
   airportName: string
   cityName: string
   countryName: string
+  cityId: number
+}
+
+export interface AirportRequest {
+  airportName: string
+  cityId: number
 }

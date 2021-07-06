@@ -3,6 +3,7 @@ import App from "./App"
 import { Provider } from "react-redux"
 import store from "./state/store"
 import Bootstrap from "./components/bootstrap"
+import "bootstrap/dist/js/bootstrap"
 
 export function Main() {
   return (

@@ -8,3 +8,13 @@ export interface BaseResult {
   message: string
   status: boolean
 }
+
+export interface GetPagingResponse<T> {
+  items: T[]
+  totalRecord: number
+}
+
+export interface AirportRequest {
+  airportName: string
+  cityId: number
+}

@@ -26,7 +26,7 @@ const SideBarManage = () => {
             </Link>
             <ul>
               <NavLink to="/admin/manage-airline">Airline</NavLink>
-              <NavLink to="/admin/manage-city">City</NavLink>
+              <NavLink to="/admin/manage-city">City - Airport</NavLink>
               <NavLink to="/admin/manage-flight">Flight</NavLink>
             </ul>
           </li>

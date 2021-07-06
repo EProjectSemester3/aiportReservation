@@ -1,7 +1,13 @@
 import { TokenInfo } from "src/models/TokenInfo"
 import { AxiosInstance, AxiosRequestConfig, AxiosResponse } from "axios"
-import { BaseResult, LoginRequest } from "./models"
-import { User, UserRegister, AirlineResult, Airline } from "src/models"
+import {
+  AirportRequest,
+  BaseResult,
+  GetPagingResponse,
+  LoginRequest,
+} from "./models"
+import { User, UserRegister, AirlineResult, Airline, City } from "src/models"
+import { Airport } from "src/models/Airport"
 
 export class APIService {
   constructor(private _axios: AxiosInstance) {
@@ -68,6 +74,73 @@ export class APIService {
     const resp = await this._axios.put<Airline>(
       `/Airline/${value.airlineId}`,
       value,
+      {
+        validateStatus: (status: number) => status === 200,
+      },
+    )
+    return resp
+  }
+
+  public async getCity(
+    keyword: string,
+    pageIndex: number,
+    pageSize: number,
+  ): Promise<GetPagingResponse<City>> {
+    const resp = await this._axios.get<GetPagingResponse<City>>(
+      `/City?Keyword=${keyword}&PageIndex=${pageIndex}&PageSize=${pageSize}`,
+      {
+        validateStatus: (status: number) => status === 200,
+      },
+    )
+    return resp.data
+  }
+
+  public async createCity(city: City): Promise<AxiosResponse> {
+    const resp = await this._axios.post<AxiosResponse>("/City", city, {
+      validateStatus: (status: number) => status === 201,
+    })
+    return resp
+  }
+
+  public async updateCity(city: City): Promise<AxiosResponse> {
+    const resp = await this._axios.put<AxiosResponse>(
+      "/City?id=" + city.id,
+      city,
+      {
+        validateStatus: (status: number) => status === 200,
+      },
+    )
+    return resp
+  }
+
+  public async getAirport(
+    keyword: string,
+    pageIndex: number,
+    pageSize: number,
+  ): Promise<GetPagingResponse<Airport>> {
+    const resp = await this._axios.get<GetPagingResponse<Airport>>(
+      `/Airport?Keyword=${keyword}&PageIndex=${pageIndex}&PageSize=${pageSize}`,
+      {
+        validateStatus: (status: number) => status === 200,
+      },
+    )
+    return resp.data
+  }
+
+  public async createAirport(request: AirportRequest): Promise<AxiosResponse> {
+    const resp = await this._axios.post<AxiosResponse>("/Airport", request, {
+      validateStatus: (status: number) => status === 201,
+    })
+    return resp
+  }
+
+  public async updateAirport(
+    airportId: number,
+    request: AirportRequest,
+  ): Promise<AxiosResponse> {
+    const resp = await this._axios.put<AxiosResponse>(
+      "/Airport/" + airportId,
+      request,
       {
         validateStatus: (status: number) => status === 200,
       },

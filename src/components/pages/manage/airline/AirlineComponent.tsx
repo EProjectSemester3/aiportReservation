@@ -20,7 +20,7 @@ export default function ManageAirlineComponent(props: ManageInformationProps) {
   }
 
   const onHandleDeleteAirline = () => {
-    window.confirm('Are you sure delete airline?')
+    window.confirm("Are you sure delete airline?")
   }
 
   return (
@@ -50,12 +50,13 @@ export default function ManageAirlineComponent(props: ManageInformationProps) {
                             <td>{a.airlineName}</td>
                             <td>
                               <button
-                                className="btn btn-primary"
+                                className="btn btn-primary text-white"
                                 onClick={() => actionForm(a)}>
                                 Edit
                               </button>
-                              <button className="btn btn-danger mx-2"
-                              onClick={onHandleDeleteAirline}>
+                              <button
+                                className="btn btn-danger mx-2"
+                                onClick={onHandleDeleteAirline}>
                                 Delete
                               </button>
                             </td>
